@@ -31,6 +31,7 @@ const Navbar = () => {
         }}
       >
         <img
+        onClick={()=>nav.push('/dashboard')}
           style={{
             width: "100px",
             height: "50px",

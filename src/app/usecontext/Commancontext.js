@@ -8,6 +8,7 @@ const Commconfn = ({ children }) => {
   const [toggleside, setToggleside] = useState(false);
   const [dark, setDark] = useState(false);
   const [userimg, setuserimg] = useState('/img/png/admin.jpg');
+  const [addToPolicy,setAddToPolicy] = useState([]);
   return (
     <Commcon.Provider
       value={{
@@ -17,6 +18,8 @@ const Commconfn = ({ children }) => {
         setDark,
         userimg,
         setuserimg,
+        addToPolicy,
+        setAddToPolicy
       }}
     >
       {children}

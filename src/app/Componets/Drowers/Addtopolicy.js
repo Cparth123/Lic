@@ -6,7 +6,7 @@ import { Commcon } from "../../usecontext/Commancontext";
 
 export default function AddToPolicy({ children }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { dark } = useContext(Commcon);
+  const { dark, addToPolicy, setAddToPolicy } = useContext(Commcon);
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
   };
@@ -41,7 +41,13 @@ export default function AddToPolicy({ children }) {
             >
               Your Like policy
             </Typography>
-            <Likepolicy />
+            {addToPolicy.map((item) => {
+              return (
+                <>
+                  <Likepolicy item={item} setAddToPolicy={setAddToPolicy} />
+                </>
+              );
+            })}
           </div>
         </SwipeableDrawer>
       </React.Fragment>
@@ -49,8 +55,14 @@ export default function AddToPolicy({ children }) {
   );
 }
 
-export const Likepolicy = () => {
+export const Likepolicy = ({ item }) => {
   const likeRef = useRef();
+  const { addToPolicy, setAddToPolicy } = useContext(Commcon);
+
+  const hadlingremove = (item) => {
+    let less = addToPolicy.filter((items) => item.id !== items.id);
+    setAddToPolicy(less);
+  };
   return (
     <>
       <Box
@@ -72,7 +84,7 @@ export const Likepolicy = () => {
             height: "160px",
             objectFit: "cover",
           }}
-          src="/img/policy/img1.jpeg"
+          src={item.img}
         />
         <Box sx={{ display: "flex", gap: 1 }}>
           <Button
@@ -92,7 +104,9 @@ export const Likepolicy = () => {
             Apply Now
           </Button>
           <Button
-            onClick={() => likeRef.current.remove()}
+            onClick={() => {
+              hadlingremove(item);
+            }}
             disableRipple
             variant="contained"
             sx={{

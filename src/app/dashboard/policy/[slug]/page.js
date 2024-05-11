@@ -1,12 +1,16 @@
 "use client";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import gallaryapi from "../../../api/gallary/gallaryapi.json";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import Toast from "@/app/Componets/Toast/Toast";
+import { useContext } from "react";
+import { Commcon } from "@/app/usecontext/Commancontext";
 
 export default function page() {
   const param = useParams().slug;
   const item = gallaryapi.filter((it) => it.id == param)[0];
+  const { addToPolicy, setAddToPolicy } = useContext(Commcon);
+  const nav = useRouter();
   return (
     <>
       <Box
@@ -18,6 +22,7 @@ export default function page() {
           borderRadius: "6px",
           boxShadow: "0px 0px 5px -2px black",
           backgroundColor: "#80808061",
+          overflow:'hidden'
         }}
       >
         <Typography
@@ -27,9 +32,27 @@ export default function page() {
             borderBottom: "1px solid grey",
             mb: 2,
             py: 1,
+            position: "relative",
           }}
         >
           Policy Title
+          <Box
+            onClick={() => nav.push("/dashboard/policy")}
+            sx={{
+              position: "absolute",
+              right: 0,
+              top: -22,
+              width: "max-content",
+              backgroundColor: "blue",
+              borderRadius: "5px",
+              padding: "2px",
+              color: "#fff",
+              cursor: "pointer",
+              display: { xs: "block", md: "none" },
+            }}
+          >
+            Back
+          </Box>
         </Typography>
         <Grid container spacing={"12px"}>
           <Grid item xs={12} md={3}>
@@ -43,7 +66,7 @@ export default function page() {
               sx={{ display: "flex", flexDirection: "column", height: "100%" }}
             >
               <Typography>Policy min years:10</Typography>
-              <Typography sx={{mb:2,color:'green'}}>
+              <Typography sx={{ mb: 2, color: "green" }}>
                 Condition:Lorem Ipsum is simply dummy text of the printing and
                 typesetting industry. Lorem Ipsum has been the industry's
                 standard dummy text ever since the 1500s, when an unknown
@@ -63,10 +86,11 @@ export default function page() {
               >
                 <Toast title={"Appliy success you policy"}>
                   <Button
+                    onClick={() => setAddToPolicy([...addToPolicy, item])}
                     disableRipple
                     variant="contained"
                     sx={{
-                      width: "100%",
+                      width: { xs: "50%", md: "100%" },
                       textTransform: "capitalize",
                       backgroundColor: "#d2b619",
                       color: "black",
