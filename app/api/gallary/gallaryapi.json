@@ -1,0 +1,47 @@
+[
+    {
+        "id":1,
+        "img":"/img/policy/img1.jpeg",
+        "alr":"gallary img"
+    },
+    {
+        "id":2,
+        "img":"/img/policy/img2.jpeg",
+        "alr":"gallary img"
+    },
+    {
+        "id":3,
+        "img":"/img/policy/img3.jpeg",
+        "alr":"gallary img"
+    },
+    {
+        "id":4,
+        "img":"/img/policy/img4.jpeg",
+        "alr":"gallary img"
+    },
+    {
+        "id":5,
+        "img":"/img/policy/img5.jpeg",
+        "alr":"gallary img"
+    },
+    {
+        "id":6,
+        "img":"/img/policy/img6.jpeg",
+        "alr":"gallary img"
+    },
+    {
+        "id":7,
+        "img":"/img/policy/img7.jpeg",
+        "alr":"gallary img"
+    },
+    {
+        "id":8,
+        "img":"/img/policy/img8.jpeg",
+        "alr":"gallary img"
+    },
+    {
+        "id":9,
+        "img":"/img/policy/img9.jpeg",
+        "alr":"gallary img"
+    }
+]
