@@ -6,6 +6,8 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaTelegramPlane } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
+import { useContext } from "react";
+import { Commcon } from "@/app/usecontext/Commancontext";
 const social = [
   {
     id: 1,
@@ -45,6 +47,8 @@ const social = [
   },
 ];
 const contact = () => {
+  const { dark } = useContext(Commcon);
+
   return (
     <>
       <Typography
@@ -83,7 +87,7 @@ const contact = () => {
                     component={"a"}
                     href={item.link}
                     sx={{
-                      backgroundColor: "#80808061",
+                      backgroundColor: !dark ? "#80808061" : "#c8101061",
                       boxShadow: "0px 0px 5px -2px black",
                       height: "100px",
                       display: "grid",

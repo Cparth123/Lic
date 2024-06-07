@@ -26,7 +26,7 @@ const gallary = () => {
         <Grid container spacing={2}>
           {gallaryapi.map((itm) => {
             return (
-              <Grid item xs={12} lg={3}>
+              <Grid key={itm?.id} item xs={12} lg={3}>
                 <Box
                   sx={{
                     display: "flex",

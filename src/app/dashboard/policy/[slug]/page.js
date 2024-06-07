@@ -9,7 +9,7 @@ import { Commcon } from "@/app/usecontext/Commancontext";
 export default function page() {
   const param = useParams().slug;
   const item = gallaryapi.filter((it) => it.id == param)[0];
-  const { addToPolicy, setAddToPolicy } = useContext(Commcon);
+  const { addToPolicy, setAddToPolicy, dark } = useContext(Commcon);
   const nav = useRouter();
   return (
     <>
@@ -21,8 +21,8 @@ export default function page() {
           mt: 1,
           borderRadius: "6px",
           boxShadow: "0px 0px 5px -2px black",
-          backgroundColor: "#80808061",
-          overflow:'hidden'
+          backgroundColor: !dark ? "#80808061" : "#272640",
+          overflow: "hidden",
         }}
       >
         <Typography
@@ -33,6 +33,7 @@ export default function page() {
             mb: 2,
             py: 1,
             position: "relative",
+            color: dark ? "#fff" : "#000",
           }}
         >
           Policy Title
@@ -65,7 +66,13 @@ export default function page() {
             <Box
               sx={{ display: "flex", flexDirection: "column", height: "100%" }}
             >
-              <Typography>Policy min years:10</Typography>
+              <Typography
+                sx={{
+                  color: dark ? "#fff" : "#000",
+                }}
+              >
+                Policy min years:10
+              </Typography>
               <Typography sx={{ mb: 2, color: "green" }}>
                 Condition:Lorem Ipsum is simply dummy text of the printing and
                 typesetting industry. Lorem Ipsum has been the industry's

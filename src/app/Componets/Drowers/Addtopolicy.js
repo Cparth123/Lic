@@ -44,7 +44,8 @@ export default function AddToPolicy({ children }) {
             {addToPolicy.map((item) => {
               return (
                 <>
-                  <Likepolicy item={item} setAddToPolicy={setAddToPolicy} />
+
+                  <Likepolicy key={item.img}  item={item} setAddToPolicy={setAddToPolicy} />
                 </>
               );
             })}

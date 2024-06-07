@@ -151,7 +151,7 @@ const dashborad = () => {
         <Grid container spacing={2}>
           {data.map((item) => {
             return (
-              <Grid item xs={12} sm={6} lg={4}>
+              <Grid key={item?.id} item xs={12} sm={6} lg={4}>
                 <Box
                   sx={{
                     bgcolor: dark ? "#042426 " : "#80808061",

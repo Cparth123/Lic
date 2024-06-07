@@ -62,6 +62,7 @@ export default function Visited() {
                 {thad.map((item) => {
                   return (
                     <TableCell
+                    key={item}
                       align="right"
                       sx={{ fontWeight: "bold", textTransform: "capitalize" }}
                     >
@@ -75,7 +76,7 @@ export default function Visited() {
             <TableBody>
               {Panding?.map((item) => {
                 return (
-                  <TableRow hover sx={{ cursor: "pointer" }}>
+                  <TableRow key={item.name} hover sx={{ cursor: "pointer" }}>
                     <TableCell align="right">{item.name}</TableCell>
                     <TableCell align="right">{item.number}</TableCell>
                     <TableCell align="right">{item.email}</TableCell>

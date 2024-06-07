@@ -37,6 +37,7 @@ export default function Tableclient() {
                 {thad.map((item) => {
                   return (
                     <TableCell
+                    key={item}
                       align="right"
                       sx={{ fontWeight: "bold", textTransform: "capitalize" }}
                     >
@@ -50,7 +51,7 @@ export default function Tableclient() {
             <TableBody>
               {Panding.map((item) => {
                 return (
-                  <TableRow hover sx={{ cursor: "pointer" }}>
+                  <TableRow key={item.name} hover sx={{ cursor: "pointer" }}>
                     <TableCell align="right">{item.name}</TableCell>
                     <TableCell align="right">{item.policy_no}</TableCell>
                     <TableCell align="right">{item.number}</TableCell>

@@ -309,7 +309,7 @@ const Sidebar = (props) => {
               return (
                 <>
                   <Box
-                    key={item.id}
+                    key={item?.id}cr
                     onClick={() => {
                       navigator.push(`${item.path}`);
                       setToggleside(!toggleside);

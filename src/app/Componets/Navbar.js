@@ -10,7 +10,7 @@ import Darkmoodbtn from "./Darkmoodbtn";
 import Addtopolicy from "./Drowers/Addtopolicy";
 import { useRouter } from "next/navigation";
 const Navbar = () => {
-  const { toggleside, setToggleside, dark } = useContext(Commcon);
+  const { toggleside, setToggleside, dark, addToPolicy } = useContext(Commcon);
   const nav = useRouter();
   const { userimg } = useContext(Commcon);
 
@@ -31,7 +31,7 @@ const Navbar = () => {
         }}
       >
         <img
-        onClick={()=>nav.push('/dashboard')}
+          onClick={() => nav.push("/dashboard")}
           style={{
             width: "100px",
             height: "50px",
@@ -47,24 +47,31 @@ const Navbar = () => {
           }}
         >
           <Darkmoodbtn />
-          <Badge color="secondary" badgeContent=" " variant="dot">
+          <Badge color="secondary" badgeContent="0" variant="dot" >
             <Notification />
           </Badge>
-          <Addtopolicy
-            children={
-              <FolderSpecialIcon
-                style={{
-                  width: "30px",
-                  height: "30px",
-                  padding: "5px",
-                  boxShadow: "0px 0px 15px grey",
-                  borderRadius: "50%",
-                  backgroundColor: "blue",
-                  color: "#FFF",
-                }}
-              />
-            }
-          />
+
+          <Badge
+            color="secondary"
+            variant="standard"
+            badgeContent={addToPolicy.length}
+          >
+            <Addtopolicy
+              children={
+                <FolderSpecialIcon
+                  style={{
+                    width: "30px",
+                    height: "30px",
+                    padding: "5px",
+                    boxShadow: "0px 0px 15px grey",
+                    borderRadius: "50%",
+                    backgroundColor: "blue",
+                    color: "#FFF",
+                  }}
+                />
+              }
+            />
+          </Badge>
 
           <Avatar
             onClick={() => {

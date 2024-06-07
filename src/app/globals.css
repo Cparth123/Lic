@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
+
+
+@font-face {
+	font-family: 'Poetsen One';
+	src: url('./font_family/PoetsenOne-Regular.woff2') format('woff2'),
+		url('./font_family/PoetsenOne-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
 *,
 body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Poetsen One", sans-serif !important; 
+	font-family: "Poetsen One" ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  !important;
 	font-weight: 400;
 	font-style: normal;
 }
+
 
 
 ::-webkit-scrollbar-track {

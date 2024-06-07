@@ -187,7 +187,7 @@ const service = () => {
           <Grid container spacing={2}>
             {oversev.map((item) => {
               return (
-                <Grid item xs={12} sm={6} lg={4}>
+                <Grid key={item?.id} item xs={12} sm={6} lg={4}>
                   <Box
                     key={item.id}
                     onClick={() => {
