@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { useContext } from "react";
 
-const setting = () => {
+const Setting = () => {
   const { userimg } = useContext(Commcon);
   const defaultinputStyle = {
     boxShadow: "0px 0px 5px -2px black",
@@ -180,4 +180,4 @@ const setting = () => {
     </>
   );
 };
-export default setting;
+export default Setting;

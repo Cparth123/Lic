@@ -19,6 +19,7 @@ import { CgPolaroid } from "react-icons/cg";
 import { FaRegAddressCard } from "react-icons/fa6";
 import Model from "@/app/Componets/service_model/Model";
 import { Commcon } from "@/app/usecontext/Commancontext";
+import Motion from "@/app/Componets/Motion";
 const sev1 = [
   {
     id: 1,
@@ -114,7 +115,7 @@ const sev2 = [
     icon: <FaRegAddressCard />,
   },
 ];
-const service = () => {
+const Service = () => {
   const [oversev, setOversev] = useState(sev1);
   const [open, setOpen] = useState(false);
   const [senddata, setSendata] = useState([]);
@@ -147,7 +148,7 @@ const service = () => {
               color: oversev === sev1 ? `${dark ? "#FFF" : "black"}` : "",
               px: "10px",
               borderRadius: "5px",
-              fontWeight: 600,
+              fontWeight: 400,
               textTransform: "capitalize",
               boxShadow: "0px 0px 5px grey",
               textAlign: "center",
@@ -169,7 +170,7 @@ const service = () => {
               boxShadow: "0px 0px 5px grey",
               px: "10px",
               borderRadius: "5px",
-              fontWeight: 600,
+              fontWeight:400,
               textTransform: "capitalize",
               textAlign: "center",
               cursor: "pointer",
@@ -184,52 +185,54 @@ const service = () => {
             mt: 2,
           }}
         >
-          <Grid container spacing={2}>
-            {oversev.map((item) => {
-              return (
-                <Grid key={item?.id} item xs={12} sm={6} lg={4}>
-                  <Box
-                    key={item.id}
-                    onClick={() => {
-                      hadlingopen(item);
-                    }}
-                    sx={{
-                      bgcolor: dark ? "#042426 " : "#80808061",
-                      boxShadow: "0px 0px 5px -2px black",
-                      height: "120px",
-                      borderRadius: "12px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <Box>
-                      <Typography
-                        sx={{
-                          textAlign: "center",
-                          color: dark ? "#FFFFFF " : "blue",
-                          fontSize: "25px",
-                        }}
-                      >
-                        {item.icon}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          color: dark ? "#FFFFFF " : "black",
-                          textAlign: "center",
-                          fontSize: "18px",
-                          fontWeight: 700,
-                        }}
-                      >
-                        {item.title}
-                      </Typography>
+          <Motion>
+            <Grid container spacing={2}>
+              {oversev.map((item) => {
+                return (
+                  <Grid key={item?.id} item xs={12} sm={6} lg={4}>
+                    <Box
+                      key={item.id}
+                      onClick={() => {
+                        hadlingopen(item);
+                      }}
+                      sx={{
+                        bgcolor: dark ? "#042426 " : "#80808061",
+                        boxShadow: "0px 0px 5px -2px black",
+                        height: "120px",
+                        borderRadius: "12px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        cursor: "pointer",
+                      }}
+                    >
+                      <Box>
+                        <Typography
+                          sx={{
+                            textAlign: "center",
+                            color: dark ? "#FFFFFF " : "blue",
+                            fontSize: "25px",
+                          }}
+                        >
+                          {item.icon}
+                        </Typography>
+                        <Typography
+                          sx={{
+                            color: dark ? "#FFFFFF " : "black",
+                            textAlign: "center",
+                            fontSize: "18px",
+                            fontWeight: 700,
+                          }}
+                        >
+                          {item.title}
+                        </Typography>
+                      </Box>
                     </Box>
-                  </Box>
-                </Grid>
-              );
-            })}
-          </Grid>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </Motion>
         </Box>
       </Box>
 
@@ -237,4 +240,4 @@ const service = () => {
     </>
   );
 };
-export default service;
+export default Service;

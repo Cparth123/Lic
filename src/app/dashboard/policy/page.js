@@ -5,7 +5,9 @@ import gallaryapi from "../../api/gallary/gallaryapi.json";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { Commcon } from "@/app/usecontext/Commancontext";
-const gallary = () => {
+import Image from "next/image";
+import Motion from "@/app/Componets/Motion";
+const Gallary = () => {
   const nav = useRouter();
   const { dark } = useContext(Commcon);
   return (
@@ -23,52 +25,56 @@ const gallary = () => {
       </Typography>
 
       <Box>
-        <Grid container spacing={2}>
-          {gallaryapi.map((itm) => {
-            return (
-              <Grid key={itm?.id} item xs={12} lg={3}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    p: "5px",
-                    borderRadius: "6px",
-                    boxShadow: "0px 0px 5px -2px black",
-                    backgroundColor: dark ? "#272640" : "#80808061",
-                  }}
-                >
-                  <img
-                    style={{
-                      objectFit: "cover",
-                      width: "100%",
-                      height: "100%",
-                      borderRadius: "12px",
-                    }}
-                    src={itm.img}
-                    alt={itm.alr}
-                  />
-                  <Button
-                    onClick={() => nav.push(`/dashboard/policy/${itm.id}`)}
-                    disableRipple
-                    variant="contained"
+        <Motion>
+          <Grid container spacing={2}>
+            {gallaryapi.map((itm) => {
+              return (
+                <Grid key={itm?.id} item xs={12} lg={3}>
+                  <Box
                     sx={{
-                      mt: 1,
-                      textTransform: "capitalize",
-                      backgroundColor: "#d2b619",
-                      ":hover": {
-                        backgroundColor: "#d2b619",
-                      },
+                      display: "flex",
+                      flexDirection: "column",
+                      p: "5px",
+                      borderRadius: "6px",
+                      boxShadow: "0px 0px 5px -2px black",
+                      backgroundColor: dark ? "#272640" : "#80808061",
                     }}
                   >
-                    Details
-                  </Button>
-                </Box>
-              </Grid>
-            );
-          })}
-        </Grid>
+                    <Image
+                      width={100}
+                      height={100}
+                      style={{
+                        objectFit: "cover",
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "12px",
+                      }}
+                      src={itm.img}
+                      alt={itm.alr}
+                    />
+                    <Button
+                      onClick={() => nav.push(`/dashboard/policy/${itm.id}`)}
+                      disableRipple
+                      variant="contained"
+                      sx={{
+                        mt: 1,
+                        textTransform: "capitalize",
+                        backgroundColor: "#d2b619",
+                        ":hover": {
+                          backgroundColor: "#d2b619",
+                        },
+                      }}
+                    >
+                      Details
+                    </Button>
+                  </Box>
+                </Grid>
+              );
+            })}
+          </Grid>
+        </Motion>
       </Box>
     </>
   );
 };
-export default gallary;
+export default Gallary;

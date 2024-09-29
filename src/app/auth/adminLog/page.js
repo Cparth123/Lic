@@ -35,7 +35,7 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 
-export default function page() {
+export default function Page() {
   const navigator = useRouter();
   const handleSubmit = (event) => {
     event.preventDefault();

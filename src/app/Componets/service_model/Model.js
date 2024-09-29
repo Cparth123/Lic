@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import { Typography } from "@mui/material";
 import { IoMdClose } from "react-icons/io";
+import Image from "next/image";
 
 const style = {
   position: "absolute",
@@ -18,15 +19,13 @@ const style = {
 };
 
 export default function Model(props) {
-  const { open,senddata, setOpen } = props;
-  
+  const { open, senddata, setOpen } = props;
+
   const handleClose = () => {
     setOpen(false);
   };
 
-
-console.log('.................',);
-  
+  console.log(".................");
 
   return (
     <div>
@@ -79,7 +78,10 @@ console.log('.................',);
               display: "flex",
             }}
           >
-            <img
+            <Image
+              width={100}
+              height={100}
+              alt="emty"
               style={{
                 width: "100%",
                 height: "auto",
@@ -94,7 +96,7 @@ console.log('.................',);
             }}
           >
             is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been the industry's standard dummy text ever since the
+            Ipsum has been the industry`s standard dummy text ever since the
             1500s, when an unknown printer took a galley of type and scrambled
             it to make a type specimen book. It has survived not only five
             centuries, but also the leap into electronic typesetting, remaining
@@ -103,7 +105,7 @@ console.log('.................',);
             recently with desktop publishing software like Aldus PageMaker
             including versions of Lorem Ipsum. is simply dummy text of the
             printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown
+            industry`s standard dummy text ever since the 1500s, when an unknown
             printer took a galley of type and scrambled it to make a type
             specimen book. It has survived not only five centuries, but also the
             leap into electronic typesetting, remaining essentially unchanged.
@@ -111,7 +113,7 @@ console.log('.................',);
             containing Lorem Ipsum passages, and more recently with desktop
             publishing software like Aldus PageMaker including versions of Lorem
             Ipsum. is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
+            industry. Lorem Ipsum has been the industry`s standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book. It has survived not
             only five centuries, but also the leap into electronic typesetting,

@@ -3,6 +3,7 @@ import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Button from "@mui/material/Button";
 import { Box, Typography } from "@mui/material";
 import { Commcon } from "../../usecontext/Commancontext";
+import Image from "next/image";
 
 export default function AddToPolicy({ children }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -44,8 +45,11 @@ export default function AddToPolicy({ children }) {
             {addToPolicy.map((item) => {
               return (
                 <>
-
-                  <Likepolicy key={item.img}  item={item} setAddToPolicy={setAddToPolicy} />
+                  <Likepolicy
+                    key={item.img}
+                    item={item}
+                    setAddToPolicy={setAddToPolicy}
+                  />
                 </>
               );
             })}
@@ -79,7 +83,10 @@ export const Likepolicy = ({ item }) => {
           flexDirection: "column",
         }}
       >
-        <img
+        <Image
+          width={100}
+          height={100}
+          alt="emty"
           style={{
             width: "100%",
             height: "160px",

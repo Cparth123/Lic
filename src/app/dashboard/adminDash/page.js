@@ -8,7 +8,7 @@ import { Commcon } from "@/app/usecontext/Commancontext";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { useContext, useState } from "react";
 
-export default function page() {
+export default function Page() {
   const [tab, setTab] = useState("pandding");
   const { dark } = useContext(Commcon);
   const defaulBox = {

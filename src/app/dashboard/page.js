@@ -9,6 +9,9 @@ import { IoIosCall } from "react-icons/io";
 import { useContext } from "react";
 import { Commcon } from "../usecontext/Commancontext";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Motion from "../Componets/Motion";
+
 const data = [
   {
     id: 1,
@@ -36,90 +39,98 @@ const data = [
     resio: "75%",
   },
 ];
-const dashborad = () => {
+const Page = () => {
   const { toggleside, dark } = useContext(Commcon);
   const nav = useRouter();
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-around",
-          flexDirection: { xs: "column", sm: "row" },
-          bgcolor: dark ? "#042426 " : "#FFFFFF",
-          borderRadius: "8px",
-        }}
-      >
+      <Motion>
         <Box
           sx={{
-            p: { xs: 3, md: 10 },
-            order: { xs: 2, md: 1 },
-            color: dark ? "#FFFFFF " : "black",
-          }}
-        >
-          <Typography
-            sx={{
-              fontSize: "20px",
-              fontStyle: "italic",
-              fontWeight: 600,
-              textTransform: "capitalize",
-            }}
-          >
-            Hello I`m
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "25px",
-              fontWeight: 600,
-              fontStyle: "italic",
-              mt: 2,
-            }}
-          >
-            FUTURE LIFE ADVISORS
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "30px",
-              fontWeight: "300",
-              fontFamily: "sans-serif",
-            }}
-          >
-            Rajendra Solanki
-          </Typography>
-          <Button
-            onClick={() => nav.push("https://wa.me/919099100131")}
-            startIcon={<IoIosCall />}
-            disableRipple
-            variant="contained"
-            sx={{
-              mt: 1,
-              textTransform: "capitalize",
-              backgroundColor: "#d2b619",
-              textWrap: "nowrap",
-              ":hover": {
-                backgroundColor: "#d2b619",
-              },
-            }}
-          >
-            Contect Now
-          </Button>
-        </Box>
-        <Box
-          sx={{
-            order: { xs: 1, md: 2 },
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "space-around",
+            flexDirection: { xs: "column", sm: "row" },
+            bgcolor: dark ? "#042426 " : "#FFFFFF",
+            borderRadius: "8px",
           }}
         >
-          <img
-            style={{
-              height: "300px ",
-              width: "300px",
+          <Box
+            sx={{
+              p: { xs: 3, md: 10 },
+              order: { xs: 2, md: 1 },
+              color: dark ? "#FFFFFF " : "black",
             }}
-            src="/img/png/loder.png"
-          />
+          >
+            <Typography
+              sx={{
+                fontSize: "20px",
+                fontStyle: "italic",
+                fontWeight: 600,
+                textTransform: "capitalize",
+              }}
+            >
+              Hello I`m
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "25px",
+                fontWeight: 500,
+                fontStyle: "italic",
+                mt: 2,
+              }}
+            >
+              FUTURE LIFE ADVISORS
+              <br />
+              Wealth Manager
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "30px",
+                fontWeight: "300",
+                mt:'13px',
+                fontFamily: "sans-serif",
+              }}
+            >
+              Rajendra Solanki
+            </Typography>
+            <Button
+              onClick={() => nav.push("https://wa.me/919099100131")}
+              startIcon={<IoIosCall />}
+              disableRipple
+              variant="contained"
+              sx={{
+                mt: 1,
+                textTransform: "capitalize",
+                backgroundColor: "#d2b619",
+                textWrap: "nowrap",
+                ":hover": {
+                  backgroundColor: "#d2b619",
+                },
+              }}
+            >
+              Contect Now
+            </Button>
+          </Box>
+          <Box
+            sx={{
+              order: { xs: 1, md: 2 },
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              width={100}
+              height={100}
+              alt="emty"
+              style={{
+                height: "300px ",
+                width: "300px",
+              }}
+              src="/img/png/loder.png"
+            />
+          </Box>
         </Box>
-      </Box>
+      </Motion>
 
       {/* <Typography
         sx={{ px: {xs:'0', md:"150px"} }}
@@ -218,4 +229,4 @@ const dashborad = () => {
     </>
   );
 };
-export default dashborad;
+export default Page;

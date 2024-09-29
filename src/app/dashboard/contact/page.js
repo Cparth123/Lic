@@ -46,7 +46,7 @@ const social = [
     color: "red",
   },
 ];
-const contact = () => {
+const Contact = () => {
   const { dark } = useContext(Commcon);
 
   return (
@@ -113,4 +113,4 @@ const contact = () => {
     </>
   );
 };
-export default contact;
+export default Contact;

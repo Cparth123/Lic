@@ -9,6 +9,7 @@ import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
 import Darkmoodbtn from "./Darkmoodbtn";
 import Addtopolicy from "./Drowers/Addtopolicy";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 const Navbar = () => {
   const { toggleside, setToggleside, dark, addToPolicy } = useContext(Commcon);
   const nav = useRouter();
@@ -30,12 +31,14 @@ const Navbar = () => {
           left: 0,
         }}
       >
-        <img
+        <Image
+          width={100}
+          height={100}
+          alt="emty"
           onClick={() => nav.push("/dashboard")}
           style={{
             width: "100px",
             height: "50px",
-            mixBlendMode: "multiply ",
           }}
           src="/img/png/logo.png"
         />
@@ -47,30 +50,28 @@ const Navbar = () => {
           }}
         >
           <Darkmoodbtn />
-          <Badge color="secondary" badgeContent="0" variant="dot" >
+          <Badge color="secondary" badgeContent="0" variant="dot">
             <Notification />
           </Badge>
 
           <Badge
             color="secondary"
             variant="standard"
-            badgeContent={addToPolicy.length}
+            badgeContent={addToPolicy?.length}
           >
-            <Addtopolicy
-              children={
-                <FolderSpecialIcon
-                  style={{
-                    width: "30px",
-                    height: "30px",
-                    padding: "5px",
-                    boxShadow: "0px 0px 15px grey",
-                    borderRadius: "50%",
-                    backgroundColor: "blue",
-                    color: "#FFF",
-                  }}
-                />
-              }
-            />
+            <Addtopolicy>
+              <FolderSpecialIcon
+                style={{
+                  width: "30px",
+                  height: "30px",
+                  padding: "5px",
+                  boxShadow: "0px 0px 15px grey",
+                  borderRadius: "50%",
+                  backgroundColor: "blue",
+                  color: "#FFF",
+                }}
+              />
+            </Addtopolicy>
           </Badge>
 
           <Avatar

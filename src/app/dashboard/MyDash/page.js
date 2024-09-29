@@ -1,14 +1,15 @@
-'use client'
+"use client";
 import Circal from "@/app/Componets/charts/users/Circal";
 import Lic from "@/app/Componets/charts/users/Lic";
 import { Commcon } from "@/app/usecontext/Commancontext";
 import { Box, Button, Grid, Typography } from "@mui/material";
+import Image from "next/image";
 import { useContext } from "react";
 
-export default function page() {
+export default function Page() {
   const { dark } = useContext(Commcon);
   const defaulBox = {
-    backgroundColor:dark ? "#042426": "#80808061",
+    backgroundColor: dark ? "#042426" : "#80808061",
     boxShadow: "0px 0px 5px -2px black",
     height: "170px",
     borderRadius: "12px",
@@ -55,7 +56,10 @@ export default function page() {
                 >
                   My Policy End date :- 05/02/1012
                 </Typography>
-                <img
+                <Image
+                  width={100}
+                  height={100}
+                  alt="emty"
                   src="/img/png/startdate.jpeg"
                   style={{
                     width: "100%",
@@ -75,7 +79,10 @@ export default function page() {
                 >
                   My Policy End date :- 05/02/1012
                 </Typography>
-                <img
+                <Image
+                  width={100}
+                  height={100}
+                  alt="emty"
                   src="/img/png/download.jpeg"
                   style={{
                     width: "100%",
@@ -114,7 +121,10 @@ export default function page() {
                     Check New Policy`s
                   </Button>
                 </Box>
-                <img
+                <Image
+                  width={100}
+                  height={100}
+                  alt="emty"
                   src="/img/png/new.jpg"
                   style={{
                     width: "100%",

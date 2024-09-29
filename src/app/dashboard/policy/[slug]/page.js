@@ -5,8 +5,9 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import Toast from "@/app/Componets/Toast/Toast";
 import { useContext } from "react";
 import { Commcon } from "@/app/usecontext/Commancontext";
+import Image from "next/image";
 
-export default function page() {
+export default function Page() {
   const param = useParams().slug;
   const item = gallaryapi.filter((it) => it.id == param)[0];
   const { addToPolicy, setAddToPolicy, dark } = useContext(Commcon);
@@ -57,7 +58,10 @@ export default function page() {
         </Typography>
         <Grid container spacing={"12px"}>
           <Grid item xs={12} md={3}>
-            <img
+            <Image
+              width={100}
+              height={100}
+              alt="emty"
               style={{ width: "100%", height: "auto", borderRadius: "8px" }}
               src={item.img}
             />
@@ -75,7 +79,7 @@ export default function page() {
               </Typography>
               <Typography sx={{ mb: 2, color: "green" }}>
                 Condition:Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's
+                typesetting industry. Lorem Ipsum has been the industry`s
                 standard dummy text ever since the 1500s, when an unknown
                 printer took a galley of type and scrambled it to make a type
                 specimen book. It has survived not only five centuries, but also

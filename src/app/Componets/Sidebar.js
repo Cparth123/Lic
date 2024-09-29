@@ -132,73 +132,76 @@ const Sidebar = (props) => {
           })}
 
           <Box sx={{ mt: 10 }}>
-            {role == 1 ? (
-              <Box
-                onClick={() => {
-                  navigator.push(`/dashboard/MyDash`);
-                }}
-                sx={{
-                  my: 1,
-                  height: "auto",
-                  borderRadius: 0,
-                  fontWeight: 600,
-                  color: "#FFF",
-                  textTransform: "capitalize",
-                  display: "flex",
-                  // alignItems: "center",
-                  px: 2,
-                  py: 1,
-                  gap: 2,
-                  cursor: "pointer",
-                  bgcolor: dark ? "#272640 " : "#80808061",
-                }}
-              >
-                <Typography sx={{ fontSize: "20px" }}></Typography>
-                <Typography
+            {/* admin and user dashboard  */}
+            {/* <Box>
+              {role == 1 ? (
+                <Box
+                  onClick={() => {
+                    navigator.push(`/dashboard/MyDash`);
+                  }}
                   sx={{
-                    display: open ? "inline-block" : "none",
-                    transition: "all ease .7s",
+                    my: 1,
+                    height: "auto",
+                    borderRadius: 0,
+                    fontWeight: 600,
+                    color: "#FFF",
+                    textTransform: "capitalize",
+                    display: "flex",
+                    // alignItems: "center",
+                    px: 2,
+                    py: 1,
+                    gap: 2,
+                    cursor: "pointer",
+                    bgcolor: dark ? "#272640 " : "#80808061",
                   }}
                 >
-                  My policy
-                </Typography>
-              </Box>
-            ) : role == 2 ? (
-              <Box
-                onClick={() => {
-                  navigator.push(`/dashboard/adminDash`);
-                }}
-                sx={{
-                  my: 1,
-                  height: "auto",
-                  borderRadius: 0,
-                  fontWeight: 600,
-                  color: "#FFF",
-                  textTransform: "capitalize",
-                  display: "flex",
-                  // alignItems: "center",
-                  px: 2,
-                  py: 1,
-                  gap: 2,
-                  cursor: "pointer",
-                  bgcolor: dark ? "#272640 " : "#80808061",
-                }}
-              >
-                <Typography sx={{ fontSize: "20px" }}></Typography>
-                <Typography
+                  <Typography sx={{ fontSize: "20px" }}></Typography>
+                  <Typography
+                    sx={{
+                      display: open ? "inline-block" : "none",
+                      transition: "all ease .7s",
+                    }}
+                  >
+                    My policy
+                  </Typography>
+                </Box>
+              ) : role == 2 ? (
+                <Box
+                  onClick={() => {
+                    navigator.push(`/dashboard/adminDash`);
+                  }}
                   sx={{
-                    display: open ? "inline-block" : "none",
-                    transition: "all ease .7s",
+                    my: 1,
+                    height: "auto",
+                    borderRadius: 0,
+                    fontWeight: 600,
+                    color: "#FFF",
+                    textTransform: "capitalize",
+                    display: "flex",
+                    // alignItems: "center",
+                    px: 2,
+                    py: 1,
+                    gap: 2,
+                    cursor: "pointer",
+                    bgcolor: dark ? "#272640 " : "#80808061",
                   }}
                 >
-                  My dashboard
-                </Typography>
-              </Box>
-            ) : role == 3 ? (
-              ""
-            ) : (
-              ""
-            )}
+                  <Typography sx={{ fontSize: "20px" }}></Typography>
+                  <Typography
+                    sx={{
+                      display: open ? "inline-block" : "none",
+                      transition: "all ease .7s",
+                    }}
+                  >
+                    My dashboard
+                  </Typography>
+                </Box>
+              ) : role == 3 ? (
+                ""
+              ) : (
+                ""
+              )}
+            </Box> */}
 
             <Box
               sx={{
@@ -309,7 +312,8 @@ const Sidebar = (props) => {
               return (
                 <>
                   <Box
-                    key={item?.id}cr
+                    key={item?.id}
+                    cr
                     onClick={() => {
                       navigator.push(`${item.path}`);
                       setToggleside(!toggleside);
@@ -346,73 +350,76 @@ const Sidebar = (props) => {
             })}
 
             <Box sx={{ mt: 10 }}>
-              {role == 1 ? (
-                <Box
-                  onClick={() => {
-                    navigator.push(`/dashboard/MyDash`);
-                  }}
-                  sx={{
-                    my: 1,
-                    height: "auto",
-                    borderRadius: 0,
-                    fontWeight: 600,
-                    color: "#FFF",
-                    textTransform: "capitalize",
-                    display: "flex",
-                    // alignItems: "center",
-                    px: 2,
-                    py: 1,
-                    gap: 2,
-                    cursor: "pointer",
-                    bgcolor: dark ? "#272640 " : "#80808061",
-                  }}
-                >
-                  <Typography sx={{ fontSize: "20px" }}></Typography>
-                  <Typography
+              {/* admin and dashboard routes */}
+              {/* <Box>
+                {role == 1 ? (
+                  <Box
+                    onClick={() => {
+                      navigator.push(`/dashboard/MyDash`);
+                    }}
                     sx={{
-                      display: open ? "inline-block" : "none",
-                      transition: "all ease .7s",
+                      my: 1,
+                      height: "auto",
+                      borderRadius: 0,
+                      fontWeight: 600,
+                      color: "#FFF",
+                      textTransform: "capitalize",
+                      display: "flex",
+                      // alignItems: "center",
+                      px: 2,
+                      py: 1,
+                      gap: 2,
+                      cursor: "pointer",
+                      bgcolor: dark ? "#272640 " : "#80808061",
                     }}
                   >
-                    My policy
-                  </Typography>
-                </Box>
-              ) : role == 2 ? (
-                <Box
-                  onClick={() => {
-                    navigator.push(`/dashboard/adminDash`);
-                  }}
-                  sx={{
-                    my: 1,
-                    height: "auto",
-                    borderRadius: 0,
-                    fontWeight: 600,
-                    color: "#FFF",
-                    textTransform: "capitalize",
-                    display: "flex",
-                    // alignItems: "center",
-                    px: 2,
-                    py: 1,
-                    gap: 2,
-                    cursor: "pointer",
-                    bgcolor: dark ? "#272640 " : "#80808061",
-                  }}
-                >
-                  <Typography sx={{ fontSize: "20px" }}></Typography>
-                  <Typography
+                    <Typography sx={{ fontSize: "20px" }}></Typography>
+                    <Typography
+                      sx={{
+                        display: open ? "inline-block" : "none",
+                        transition: "all ease .7s",
+                      }}
+                    >
+                      My policy
+                    </Typography>
+                  </Box>
+                ) : role == 2 ? (
+                  <Box
+                    onClick={() => {
+                      navigator.push(`/dashboard/adminDash`);
+                    }}
                     sx={{
-                      display: open ? "inline-block" : "none",
-                      transition: "all ease .7s",
+                      my: 1,
+                      height: "auto",
+                      borderRadius: 0,
+                      fontWeight: 600,
+                      color: "#FFF",
+                      textTransform: "capitalize",
+                      display: "flex",
+                      // alignItems: "center",
+                      px: 2,
+                      py: 1,
+                      gap: 2,
+                      cursor: "pointer",
+                      bgcolor: dark ? "#272640 " : "#80808061",
                     }}
                   >
-                    My dashboard
-                  </Typography>
-                </Box>
-              ) : role == 3 ? (
-                ""
-              ) : (
-                ""
-              )}
+                    <Typography sx={{ fontSize: "20px" }}></Typography>
+                    <Typography
+                      sx={{
+                        display: open ? "inline-block" : "none",
+                        transition: "all ease .7s",
+                      }}
+                    >
+                      My dashboard
+                    </Typography>
+                  </Box>
+                ) : role == 3 ? (
+                  ""
+                ) : (
+                  ""
+                )}
+              </Box> */}
               <Box
                 sx={{
                   width: "100%",
@@ -440,6 +447,17 @@ const Sidebar = (props) => {
                   }}
                   src={userimg}
                 />
+                <Typography
+                  sx={{
+                    fontSize: "10px",
+                    fontWeight: 900,
+                    color: "#FFF",
+                    textTransform: "capitalize",
+                    display: open ? "inline-block" : "none",
+                  }}
+                >
+                  rajendra solanki
+                </Typography>
                 <MdLogout
                   onClick={() => navigator.push("/auth/Singin")}
                   style={{
